@@ -1,0 +1,1129 @@
+/* CampusHub home page and shared header/footer */
+
+:root {
+    --navy: #123b65;
+    --navy-deep: #142d4e;
+    --blue: #2339b5;
+    --gold: #e7b75b;
+    --ink: #263445;
+    --muted: #687789;
+    --line: #e1e7ee;
+    --page: #f4f6f9;
+    --white: #ffffff;
+    --shadow: 0 8px 22px rgba(20, 45, 78, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--page);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: #a56e12;
+}
+
+/* Shared header and main navigation */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    width: 100%;
+    padding: 12px 6%;
+    background: var(--navy);
+    box-shadow: 0 3px 12px rgba(20, 45, 78, 0.14);
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+header > a:hover {
+    color: var(--gold);
+}
+
+header > a img {
+    width: 64px;
+    height: 44px;
+    object-fit: contain;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav a {
+    display: block;
+    padding: 8px 11px;
+    border-radius: 7px;
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+header nav a:hover,
+header nav a[aria-current="page"] {
+    color: var(--navy);
+    background: var(--white);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+    background: var(--white);
+}
+
+.search-box input {
+    width: 135px;
+    padding: 7px;
+    border: 0;
+    outline: 0;
+    color: var(--ink);
+    background: transparent;
+    font: inherit;
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 5px;
+    border: 0;
+    color: var(--navy);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    color: var(--white);
+    font-size: 29px;
+}
+
+.profile-icon:hover {
+    color: var(--gold);
+}
+
+/* Shared centered layout for home page sections */
+main > section {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+    padding: 58px 0;
+}
+
+main > section h2 {
+    margin: 0 0 10px;
+    color: var(--navy-deep);
+    font-size: clamp(25px, 3vw, 32px);
+    line-height: 1.2;
+}
+
+main > section > p {
+    color: var(--muted);
+}
+
+/* Hero: background image, readable overlay, and intro copy */
+main > section[aria-labelledby="hero-title"] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    min-height: 510px;
+    margin: 0;
+    padding: 76px 8%;
+    overflow: hidden;
+    background: var(--navy-deep);
+}
+
+main > section[aria-labelledby="hero-title"] > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+main > section[aria-labelledby="hero-title"]::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(90deg, rgba(10, 29, 52, 0.92), rgba(23, 31, 142, 0.66) 55%, rgba(10, 29, 52, 0.12));
+}
+
+main > section[aria-labelledby="hero-title"] > div {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    color: var(--white);
+}
+
+main > section[aria-labelledby="hero-title"] > div > p:first-child {
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#hero-title {
+    margin: 12px 0;
+    color: var(--white);
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.08;
+}
+
+main > section[aria-labelledby="hero-title"] > div > p:not(:first-child) {
+    max-width: 570px;
+    color: #edf2f7;
+    font-size: 17px;
+}
+
+/* Hero call-to-action link styled as a button */
+main > section[aria-labelledby="hero-title"] a {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 22px;
+    border: 2px solid var(--gold);
+    border-radius: 7px;
+    color: var(--navy-deep);
+    background: var(--gold);
+    font-weight: 700;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+}
+
+main > section[aria-labelledby="hero-title"] a:hover {
+    color: var(--white);
+    background: transparent;
+}
+
+/* Four campus statistics in a flexible row */
+main > section[aria-labelledby="statistics-title"] {
+    text-align: center;
+}
+
+main > section[aria-labelledby="statistics-title"] dl {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 28px 0 0;
+}
+
+main > section[aria-labelledby="statistics-title"] dl > div {
+    flex: 1 1 180px;
+    min-width: 0;
+    padding: 22px 15px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+main > section[aria-labelledby="statistics-title"] dt {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+main > section[aria-labelledby="statistics-title"] dd {
+    margin: 5px 0 0;
+    color: var(--blue);
+    font-size: 34px;
+    font-weight: 700;
+}
+
+/* Four featured course cards */
+main > section[aria-labelledby="courses-title"],
+main > section[aria-labelledby="events-title"],
+main > section[aria-labelledby="announcements-title"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main > section[aria-labelledby="courses-title"] > h2,
+main > section[aria-labelledby="courses-title"] > p:first-of-type,
+main > section[aria-labelledby="courses-title"] > p:last-child,
+main > section[aria-labelledby="events-title"] > h2,
+main > section[aria-labelledby="events-title"] > p:first-of-type,
+main > section[aria-labelledby="events-title"] > p:last-child,
+main > section[aria-labelledby="announcements-title"] > h2,
+main > section[aria-labelledby="announcements-title"] > p:first-of-type,
+main > section[aria-labelledby="announcements-title"] > p:last-child {
+    flex: 0 0 100%;
+}
+
+main > section[aria-labelledby="courses-title"] > article {
+    flex: 1 1 calc(25% - 20px);
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main > section[aria-labelledby="courses-title"] > article:hover,
+main > section[aria-labelledby="announcements-title"] > article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(20, 45, 78, 0.13);
+}
+
+main > section[aria-labelledby="courses-title"] > article img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+}
+
+main > section[aria-labelledby="courses-title"] > article h3,
+main > section[aria-labelledby="events-title"] > article h3 {
+    margin: 16px 17px 6px;
+    color: var(--navy-deep);
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+main > section[aria-labelledby="courses-title"] > article p,
+main > section[aria-labelledby="events-title"] > article p {
+    margin: 7px 17px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+main > section[aria-labelledby="courses-title"] > article a {
+    margin: auto 17px 16px;
+    padding-top: 11px;
+    border-top: 1px solid var(--line);
+    font-weight: 700;
+}
+
+main > section[aria-labelledby="courses-title"] > p:last-child a {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: var(--white);
+    background: var(--navy-deep);
+    font-weight: 700;
+}
+
+main > section[aria-labelledby="courses-title"] > p:last-child a:hover {
+    color: var(--navy-deep);
+    background: var(--gold);
+}
+
+/* Three upcoming event cards */
+main > section[aria-labelledby="events-title"] > article {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+main > section[aria-labelledby="events-title"] > article img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+main > section[aria-labelledby="events-title"] time {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+main > section[aria-labelledby="events-title"] > article a {
+    margin: auto 17px 0;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+/* Three latest announcement cards */
+main > section[aria-labelledby="announcements-title"] > article {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+    padding: 21px;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main > section[aria-labelledby="announcements-title"] > article h3 {
+    margin: 0 0 8px;
+    color: var(--navy-deep);
+    font-size: 18px;
+    line-height: 1.35;
+}
+
+main > section[aria-labelledby="announcements-title"] > article p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+main > section[aria-labelledby="announcements-title"] time {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+main > section[aria-labelledby="announcements-title"] > article a {
+    margin-top: auto;
+    padding-top: 10px;
+    font-weight: 700;
+}
+
+/* Shared footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 48px 6% 22px;
+    color: #dce5ef;
+    background: var(--navy-deep);
+}
+
+footer > section,
+footer > nav,
+footer > address {
+    flex: 1 1 200px;
+}
+
+footer h2 {
+    margin: 0 0 10px;
+    color: var(--white);
+    font-size: 18px;
+}
+
+footer p {
+    max-width: 390px;
+}
+
+footer nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer nav li {
+    margin-bottom: 7px;
+}
+
+footer a {
+    color: #dce5ef;
+}
+
+footer a:hover {
+    color: var(--gold);
+}
+
+footer address {
+    font-style: normal;
+}
+
+footer > p:last-child {
+    flex: 0 0 100%;
+    margin: 8px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    text-align: center;
+    font-size: 13px;
+}
+
+/* Visible keyboard focus */
+header a:focus-visible,
+header button:focus-visible,
+header input:focus-visible,
+main a:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 950px) {
+    header {
+        justify-content: center;
+    }
+
+    .header-right {
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    main > section[aria-labelledby="courses-title"] > article {
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 14px 5%;
+    }
+
+    header nav ul {
+        gap: 2px;
+    }
+
+    header nav a {
+        padding: 7px 8px;
+        font-size: 12px;
+    }
+
+    .header-right {
+        width: 100%;
+    }
+
+    .search-box input {
+        width: min(150px, 45vw);
+    }
+
+    main > section {
+        width: 90%;
+        padding: 42px 0;
+    }
+
+    main > section[aria-labelledby="hero-title"] {
+        min-height: 440px;
+        padding: 54px 6%;
+    }
+
+    #hero-title {
+        font-size: 40px;
+    }
+
+    main > section[aria-labelledby="courses-title"] > article,
+    main > section[aria-labelledby="events-title"] > article,
+    main > section[aria-labelledby="announcements-title"] > article {
+        flex-basis: 100%;
+    }
+
+    footer {
+        padding: 38px 6% 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* Reference screenshot refinements */
+header {
+    min-height: 76px;
+    padding: 10px 6%;
+    background: #1b355b;
+}
+
+header > a {
+    color: #ffffff;
+}
+
+header > a img {
+    width: 54px;
+    height: 42px;
+}
+
+header nav {
+    margin-right: auto;
+    margin-left: 22px;
+}
+
+header nav ul {
+    gap: 8px;
+}
+
+header nav a {
+    color: #ffffff;
+}
+
+header nav a:hover,
+header nav a[aria-current="page"] {
+    color: #ffffff;
+    background: #2878d0;
+}
+
+/* Keep the search closed until the search control receives focus. */
+.header-right {
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.search-box {
+    width: 42px;
+    height: 42px;
+    justify-content: flex-end;
+    padding: 4px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: width 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.search-box:focus-within {
+    width: 205px;
+    border-color: #dbe5f2;
+    background: #ffffff;
+}
+
+.search-box input {
+    width: 0;
+    min-width: 0;
+    padding: 7px 0;
+    opacity: 0;
+    transition: width 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+}
+
+.search-box:focus-within input {
+    width: 155px;
+    padding: 7px;
+    opacity: 1;
+}
+
+.search-box button {
+    flex: 0 0 32px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    color: #ffffff;
+    background: transparent;
+}
+
+.search-box:focus-within button {
+    color: #06b643;
+}
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #1b355b;
+    background: #ffffff;
+    font-size: 27px;
+}
+
+.profile-icon:hover {
+    color: #2878d0;
+}
+
+/* Split hero: image area on the left, welcome copy on the right. */
+main > section[aria-labelledby="hero-title"] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 48px;
+    min-height: 390px;
+    padding: 48px 8%;
+    color: #263445;
+    background: #ffffff;
+}
+
+main > section[aria-labelledby="hero-title"] > img {
+    position: static;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    color: #687789;
+    background: #f5f7fa;
+}
+
+main > section[aria-labelledby="hero-title"]::after {
+    content: none;
+}
+
+main > section[aria-labelledby="hero-title"] > div {
+    grid-column: 2;
+    grid-row: 1;
+    max-width: 510px;
+    color: #263445;
+}
+
+main > section[aria-labelledby="hero-title"] > div > p:first-child {
+    margin: 0 0 8px;
+    color: #245b91;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+#hero-title {
+    margin: 5px 0 12px;
+    color: #263445;
+    font-size: clamp(32px, 3.6vw, 48px);
+    line-height: 1.15;
+}
+
+main > section[aria-labelledby="hero-title"] > div > p:not(:first-child) {
+    color: #687789;
+    font-size: 15px;
+}
+
+main > section[aria-labelledby="hero-title"] a {
+    margin-top: 12px;
+    padding: 11px 19px;
+    border: 0;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #2878d0;
+    box-shadow: none;
+}
+
+main > section[aria-labelledby="hero-title"] a:hover {
+    color: #ffffff;
+    background: #1b5fa9;
+}
+
+/* Light-blue statistics band with four white statistic cards. */
+main > section[aria-labelledby="statistics-title"] {
+    width: min(1120px, 88%);
+    margin: 0 auto 30px;
+    padding: 32px;
+    border-radius: 12px;
+    background: #e7f0f7;
+}
+
+main > section[aria-labelledby="statistics-title"] h2 {
+    color: #263445;
+}
+
+main > section[aria-labelledby="statistics-title"] dl > div {
+    border-color: #e8e5dc;
+    border-radius: 10px;
+    background: #fffdf7;
+    box-shadow: 0 4px 12px rgba(20, 45, 78, 0.06);
+}
+
+@media (max-width: 950px) {
+    header nav {
+        margin: 0;
+    }
+
+    header nav ul {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 650px) {
+    main > section[aria-labelledby="hero-title"] {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 34px 6%;
+    }
+
+    main > section[aria-labelledby="hero-title"] > img {
+        grid-column: 1;
+        grid-row: 1;
+        height: 210px;
+    }
+
+    main > section[aria-labelledby="hero-title"] > div {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    main > section[aria-labelledby="statistics-title"] {
+        width: 90%;
+        padding: 22px 16px;
+    }
+
+    .search-box:focus-within {
+        width: 185px;
+    }
+
+    .search-box:focus-within input {
+        width: 135px;
+    }
+}
+
+/* Place search and profile at the far left of the header */
+.header-right {
+    order: -1;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+header > a {
+    margin-right: 8px;
+}
+
+@media (max-width: 950px) {
+    .header-right {
+        order: -1;
+        margin-right: 0;
+    }
+}
+
+/* Keep search and profile at the far right of the header */
+.header-right {
+    order: 0;
+    justify-content: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+header > a {
+    margin-right: 0;
+}
+
+@media (max-width: 950px) {
+    .header-right {
+        order: 0;
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .header-right {
+        width: 100%;
+        justify-content: flex-end;
+        margin-left: 0;
+    }
+}
+
+/* Courses page layout */
+main > .courses-discovery {
+    width: 100%;
+    padding: 0 0 14px;
+    background: var(--page);
+}
+
+main > .courses-discovery > section[aria-labelledby="courses-intro-title"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    min-height: 158px;
+    margin: 0;
+    padding: 24px 6%;
+    color: var(--white);
+    background-image: linear-gradient(rgba(14, 28, 44, 0.58), rgba(14, 28, 44, 0.58)), url("https://www.umass.edu/sites/default/files/2020-10/2018_Fall_Campus_js_IMG_6038.jpg");
+    background-position: center 48%;
+    background-size: cover;
+    text-align: center;
+}
+
+#courses-intro-title {
+    margin: 0 0 4px;
+    color: var(--white);
+    font-size: clamp(28px, 3.4vw, 38px);
+    line-height: 1.1;
+}
+
+main > .courses-discovery > section[aria-labelledby="courses-intro-title"] > p {
+    max-width: 740px;
+    margin: 0;
+    color: #f1f5fa;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+    padding: 12px 0 4px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] h2,
+main > .courses-discovery > section[aria-labelledby="course-search-title"] > p {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] form {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] form > div {
+    display: flex;
+    flex: 0 1 220px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] form > div:first-child {
+    flex: 1 1 450px;
+}
+
+main > .courses-discovery > section[aria-labelledby="course-search-title"] label {
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#course-search,
+#department,
+#level {
+    width: 100%;
+    min-height: 40px;
+    padding: 8px 11px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    background-color: var(--white);
+    font: inherit;
+    font-size: 14px;
+}
+
+#course-search {
+    padding-left: 38px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23687789' stroke-width='2'%3E%3Ccircle cx='10.8' cy='10.8' r='6.8'/%3E%3Cpath d='m16 16 5 5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+    background-size: 17px;
+}
+
+#course-search:focus,
+#department:focus,
+#level:focus {
+    border-color: var(--blue);
+    outline: 2px solid rgba(35, 57, 181, 0.14);
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] {
+    width: min(1120px, 88%);
+    margin: 0 auto;
+    padding: 4px 0 8px;
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] a {
+    display: block;
+    padding: 6px 11px;
+    border-radius: 999px;
+    color: var(--ink);
+    background: transparent;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] a:hover,
+main > .courses-discovery > nav[aria-label="Course categories"] a:focus-visible {
+    color: var(--blue);
+    background: rgba(35, 57, 181, 0.08);
+}
+
+main > .courses-discovery > nav[aria-label="Course categories"] a[aria-current="true"] {
+    color: var(--white);
+    background: var(--blue);
+}
+
+main > section#all-courses-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 16px;
+    width: min(1120px, 88%);
+    margin: 0 auto;
+    padding: 8px 0 48px;
+}
+
+main > section#all-courses-title > section {
+    display: contents;
+}
+
+main > section#all-courses-title > section > h3 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+main > section#all-courses-title article {
+    display: flex;
+    flex: 0 0 calc((100% - 32px) / 3);
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+main > section#all-courses-title article > img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+}
+
+main > section#all-courses-title article > h4 {
+    margin: 12px 14px 5px;
+    color: var(--navy-deep);
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+main > section#all-courses-title article > p {
+    margin: 6px 14px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+main > section#all-courses-title article > a {
+    align-self: flex-start;
+    margin: auto 14px 14px;
+    padding: 7px 11px;
+    border-radius: 5px;
+    color: var(--white);
+    background: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+main > section#all-courses-title article > a:hover {
+    color: var(--white);
+    background: var(--navy);
+}
+
+main > section[aria-labelledby="course-help-title"] {
+    margin-bottom: 28px;
+    padding: 26px;
+    border-radius: 10px;
+    background: #e7f0f7;
+}
+
+.search-box button svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.profile-icon svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 900px) {
+    main > section#all-courses-title article {
+        flex-basis: calc((100% - 16px) / 2);
+    }
+}
+
+@media (max-width: 650px) {
+    main > .courses-discovery > section[aria-labelledby="courses-intro-title"] {
+        min-height: 140px;
+        padding: 24px 6%;
+    }
+
+    main > .courses-discovery > section[aria-labelledby="course-search-title"],
+    main > .courses-discovery > nav[aria-label="Course categories"] {
+        width: 90%;
+    }
+
+    main > .courses-discovery > section[aria-labelledby="course-search-title"] form > div,
+    main > .courses-discovery > section[aria-labelledby="course-search-title"] form > div:first-child {
+        flex-basis: 100%;
+    }
+
+    main > section#all-courses-title {
+        width: 90%;
+        gap: 14px;
+        padding-top: 6px;
+    }
+
+    main > section#all-courses-title article {
+        flex-basis: 100%;
+    }
+}

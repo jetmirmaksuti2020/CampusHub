@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | CampusHub University Portal</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" aria-label="CampusHub home">
+            <img src="images/campushub-logo.png" alt="CampusHub university logo">
+            <span>CampusHub</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="announcements.html" aria-current="page">Announcements</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="announcements-intro-title">
+            <h1 id="announcements-intro-title">Announcements</h1>
+            <p>
+                Stay informed about the latest university news, important
+                academic dates, student opportunities, and campus updates.
+                Check this page regularly for information from CampusHub.
+            </p>
+
+            <img
+                src="images/campus-announcements.jpg"
+                alt="University notice board displaying academic information and student updates"
+            >
+        </section>
+
+        <section aria-labelledby="announcement-search-title">
+            <h2 id="announcement-search-title">Find an Announcement</h2>
+
+            <form action="announcements.html" method="get">
+                <div>
+                    <label for="announcement-search">Search Announcements</label>
+                    <input
+                        type="search"
+                        id="announcement-search"
+                        name="search"
+                        placeholder="Search by announcement title..."
+                    >
+                </div>
+
+                <div>
+                    <label for="announcement-category">Category</label>
+                    <select id="announcement-category" name="category">
+                        <option value="">All Categories</option>
+                        <option value="registration">Registration</option>
+                        <option value="library">Library</option>
+                        <option value="scholarships">Scholarships</option>
+                        <option value="it-services">IT Services</option>
+                        <option value="student-life">Student Life</option>
+                        <option value="events">University Events</option>
+                    </select>
+                </div>
+
+                <button type="submit">Search Announcements</button>
+            </form>
+
+            <p>
+                These controls demonstrate HTML form elements. Actual
+                searching and filtering require additional functionality.
+            </p>
+        </section>
+
+        <section aria-labelledby="latest-announcements-title">
+            <h2 id="latest-announcements-title">Latest Announcements</h2>
+            <p>
+                Read important notices and updates for students and staff.
+            </p>
+
+            <article>
+                <img
+                    src="images/summer-registration.jpg"
+                    alt="Student reviewing university registration documents"
+                >
+                <h3>Registration for Summer Semester</h3>
+                <p>
+                    Students are encouraged to review their academic plans
+                    and prepare the required documents for summer semester
+                    registration. Consult the official university office
+                    for registration dates and requirements.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2026-10-10">October 10, 2026</time>
+                </p>
+                <p><strong>Category:</strong> Registration</p>
+                <a href="announcement-summer-registration.html">View Details</a>
+            </article>
+
+            <article>
+                <img
+                    src="images/library-access.jpg"
+                    alt="Students studying at desks inside a university library"
+                >
+                <h3>New Library Access Hours</h3>
+                <p>
+                    Students can use the university library to study,
+                    access academic resources, and prepare for examinations.
+                    Please consult the official library notice for current
+                    opening hours and access arrangements.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2026-10-08">October 8, 2026</time>
+                </p>
+                <p><strong>Category:</strong> Library</p>
+                <a href="announcement-library-hours.html">View Details</a>
+            </article>
+
+            <article>
+                <img
+                    src="images/scholarship-opportunities.jpg"
+                    alt="University student reading information about educational funding"
+                >
+                <h3>Scholarship Opportunities</h3>
+                <p>
+                    Students interested in financial assistance are encouraged
+                    to explore available scholarship programs. Review eligibility
+                    requirements, application documents, and deadlines before
+                    submitting an application.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2026-10-06">October 6, 2026</time>
+                </p>
+                <p><strong>Category:</strong> Scholarships</p>
+                <a href="announcement-scholarships.html">View Details</a>
+            </article>
+
+            <article>
+                <img
+                    src="images/it-maintenance.jpg"
+                    alt="Computer equipment in a university information technology room"
+                >
+                <h3>IT Maintenance Notice</h3>
+                <p>
+                    Routine maintenance may temporarily affect access to
+                    selected university digital services. Save your work
+                    regularly and check official IT service updates for
+                    confirmed maintenance times and further information.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2026-10-04">October 4, 2026</time>
+                </p>
+                <p><strong>Category:</strong> IT Services</p>
+                <a href="announcement-it-maintenance.html">View Details</a>
+            </article>
+
+            <article>
+                <img
+                    src="images/student-union-elections.jpg"
+                    alt="University students discussing student representation"
+                >
+                <h3>Student Union Elections</h3>
+                <p>
+                    Students are invited to learn about the student union
+                    election process and opportunities to participate in
+                    campus representation. Consult the official election
+                    notice for candidate requirements and voting information.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2026-10-02">October 2, 2026</time>
+                </p>
+                <p><strong>Category:</strong> Student Life</p>
+                <a href="announcement-student-union.html">View Details</a>
+            </article>
+
+            <article>
+                <img
+                    src="images/welcome-week.jpg"
+                    alt="New students meeting during a university welcome event"
+                >
+                <h3>Welcome Week 2025</h3>
+                <p>
+                    Welcome Week introduces new students to university life,
+                    campus facilities, student organizations, and academic
+                    support services. Explore the activities and resources
+                    available to help students settle into university.
+                </p>
+                <p>
+                    <strong>Date:</strong>
+                    <time datetime="2025-09-15">September 15, 2025</time>
+                </p>
+                <p><strong>Category:</strong> University Events</p>
+                <a href="announcement-welcome-week.html">View Details</a>
+            </article>
+        </section>
+
+        <section aria-labelledby="announcement-contact-title">
+            <h2 id="announcement-contact-title">Need More Information?</h2>
+            <p>
+                For questions about university notices, academic requirements,
+                or student services, contact the CampusHub information team.
+            </p>
+            <p>
+                <a href="mailto:info@campushub.example">Contact CampusHub</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <section aria-labelledby="footer-about-title">
+            <h2 id="footer-about-title">About CampusHub</h2>
+            <p>
+                CampusHub keeps students informed about courses, instructors,
+                campus events, and important university announcements.
+            </p>
+        </section>
+
+        <nav aria-label="Footer navigation">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="announcements.html" aria-current="page">Announcements</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            CampusHub University Portal<br>
+            Student Services Office<br>
+            Email:
+            <a href="mailto:info@campushub.example">info@campushub.example</a>
+        </address>
+
+        <p>
+            <small>&copy; 2026 CampusHub. Educational demonstration project.</small>
+        </p>
+    </footer>
+
+</body>
+</html>
